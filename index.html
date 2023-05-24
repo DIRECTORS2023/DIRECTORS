@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DIRECTORS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html"><strong>Multiverse</strong> by HTML5 UP</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <script>
+                var videoLinks = [
+                    "https://youtu.be/Vrx8wgUARiY",
+                    "https://youtu.be/5MlG9BL3iBQ",
+                    "https://youtu.be/TaP1-DoWeI4",
+                    "https://youtu.be/y6kYJtVrh-k",
+                    "https://youtu.be/2aMWvD4md9g",
+                    "https://youtu.be/8JblQP9yn3E",
+                    "https://youtu.be/1JHPjiIX6ik",
+                    "https://youtu.be/ccyxjY2pMVs",
+                    "https://youtu.be/S9HILI9wWtI",
+                    "https://youtu.be/MyyISmNcJhE",
+                    "https://youtu.be/GJkWLdmUwlY",
+                    "https://youtu.be/KPOGKwKlSBE",
+                    "https://youtu.be/wT00Dyiu4iA",
+                    "https://youtu.be/7eXLpO5lfBw",
+                    "https://youtu.be/qiczr3tpU38",
+                    "https://youtu.be/E-XZNxjKcy0",
+                    "https://youtu.be/zv90REoHncU",
+                    "https://youtu.be/HxqUGlYS730",
+                    "https://youtu.be/10SJFd8k1_I",
+                    "https://youtu.be/FATvkG0bQjk",
+                    "https://youtu.be/oCQ8ccnKE3U",
+                    "https://youtu.be/aheM9rqdujY",
+                    "https://youtu.be/pVnB7vLE5tw",
+                    "https://youtu.be/CfFiXDkRtw8",
+                    "https://youtu.be/uSBLcL4foX8",
+                    "https://youtu.be/mvUMgEY9nwI",
+                    "https://youtu.be/zTnztVSZAkg",
+                    "https://youtu.be/AG9MVdqGKWs",
+                    "https://youtu.be/_lXZJW70uFc",
+                    "https://youtu.be/wlwZTh2Vdx0",
+                    "https://youtu.be/570tpSXqOVc",
+                    "https://youtu.be/GElRNJ9MQ6M",
+                    "https://youtu.be/2x8UOVa2R_8",
+                    "https://youtu.be/pD5Ry4_9NiI",
+                    "https://youtu.be/Bv1FvfzZMVc",
+                    "https://youtu.be/7tGbS98OTtw",
+                    "https://youtu.be/gba5eHcW_ec",
+                    "https://youtu.be/JGVehLgwBfM",
+                    "https://youtu.be/8e5SwLnRzKw",
+                    "https://youtu.be/9FQMlhnLLvc",
+                    "https://youtu.be/edThfv3YRIU",
+                    "https://youtu.be/FWvcfwy3gH0"
+                ];
+
+                var videoTitles = [
+                    "스팽스",
+                    "트루릴리전",
+                    " ",
+                    "관절엔아나파랙틴",
+                    "벤시몽",
+                    "핸리로이드",
+                    "쥬시꾸띄르",
+                    " ",
+                    " ",
+                    " ",
+                    "펫슬림프로바이오틱스",
+                    " ",
+                    "비에닐퀸",
+                    " ",
+                    " ",
+                    " ",
+                    " ",
+                    "비에날씬프로",
+                    " ",
+                    " ",
+                    " ",
+                    "비에날씬프로틴"
+                ];
+
+                var videoDescriptions = [
+                    "첫 번째 동영상 설명입니다.",
+                    "두 번째 동영상 설명입니다.",
+                    "세 번째 동영상 설명입니다."
+                ];
+
+                var main = document.getElementById("main");
+
+                for (var i = 0; i < videoLinks.length; i++) {
+                    var videoLink = videoLinks[i];
+                    var videoId = extractVideoId(videoLink);
+                    var thumbnailUrl = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
+
+                    var article = document.createElement("article");
+                    article.classList.add("thumb");
+
+                    var link = document.createElement("a");
+                    link.href = videoLink;
+                    link.classList.add("image");
+
+                    var thumbnail = document.createElement("img");
+                    thumbnail.src = thumbnailUrl;
+                    thumbnail.alt = "";
+
+                    // 마우스 효과를 위해 추가된 부분
+                    thumbnail.addEventListener("mouseenter", function() {
+                        this.style.transform = "scale(1.1)";
+                        this.style.transition = "transform 0.3s ease-in-out";
+                    });
+
+                    thumbnail.addEventListener("mouseleave", function() {
+                        this.style.transform = "scale(1)";
+                        this.style.transition = "transform 0.3s ease-in-out";
+                    });
+
+                    link.appendChild(thumbnail);
+                    article.appendChild(link);
+
+                    var title = document.createElement("h2");
+                    title.textContent = videoTitles[i]; // 동영상 제목을 배열에서 가져옵니다.
+                    article.appendChild(title);
+
+                    var description = document.createElement("p");
+                    description.textContent = videoDescriptions[i]; // 동영상 설명을 배열에서 가져옵니다.
+                    article.appendChild(description);
+
+                    main.appendChild(article);
+                }
+
+                function extractVideoId(url) {
+                    var match = url.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w-]{10,12})/);
+                    return (match !== null) ? match[1] : null;
+                }
+            </script>
+            <!-- 추가 동영상 -->
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" class="panel">
+            <div class="inner split">
+                <div>
+                    <section>
+                        <h2>Magna feugiat sed adipiscing</h2>
+                        <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum
+                            eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu
+                            bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor
+                            tincidunt erat, et scelerisque turpis ipsum.</p>
+                    </section>
+                    <section>
+                        <h2>Follow me on ...</h2>
+                        <ul class="icons">
+                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+                            </li>
+                            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+                            </li>
+                            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <p class="copyright">
+                        &copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+                    </p>
+                </div>
+                <div>
+                    <section>
+                        <h2>Get in touch</h2>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Name" />
+                                </div>
+                                <div class="field half">
+                                    <input type="text" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send" class="primary" /></li>
+                                <li><input type="reset" value="Reset" /></li>
+                            </ul>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
